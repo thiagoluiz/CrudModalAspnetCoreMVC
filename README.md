@@ -41,32 +41,6 @@ Criar um crud onde as views serão chamadas de forma modal, neste exemplo utiliz
 </script> 
 ```
 No Exemplo acima, foi criado o titulo das colunas, para isso criei um array do alfabeto para definir o nome de cada coluna
-
-
-## Montando os Campos dinamicamente#
-
-Criaremos os campos de acordo com a quantidade de colunas e linhas definidas
-
-```javascript
-  html = html + "<tbody>";	   	   
-	   
-	   
-       nomeColuna = "";	   	   
-	   for (x=0; x < numeroLinhas; x++)
-	   {	   	  	  
-	      html = html + "<tr >"; 				 	 
-	      for (i=0; i < numeroColunas; i++)
-	      {
-		    nomeColuna =  letrasAlfabeto[i] + numeroLinha;
-	        html = html + "<td id='" + nomeColuna + "'>-</td>";
-	      }
-          html = html + "</tr> ";				   	   	 
-		  numeroLinha = numeroLinha + 1;	
-       }
-       html = html + "</tbody>";
-
-```
-
 Com isso, no nosso controller atráves de requisições POST obtemos os dados vindo de cada tela. Exemplo:
 
 ```javascript

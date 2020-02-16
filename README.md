@@ -41,7 +41,6 @@ Criar um crud onde as views serão chamadas de forma modal, neste exemplo utiliz
     })
 </script> 
 ```
-No Exemplo acima, foi criado o titulo das colunas, para isso criei um array do alfabeto para definir o nome de cada coluna
 Com isso, no nosso controller atráves de requisições POST obtemos os dados vindo de cada tela. Exemplo:
 
 ```javascript

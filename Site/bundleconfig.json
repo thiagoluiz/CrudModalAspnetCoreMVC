@@ -1,0 +1,52 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/js/bootstrap.js"
+    ]
+  },
+  
+  {
+    "outputFileName": "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-validation/dist/additional-methods.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    ]
+  },
+ 
+  {
+    "outputFileName": "wwwroot/js/respond.min.js",
+    "inputFiles": [
+      "wwwroot/js/respond.js"
+    ]
+  }
+]

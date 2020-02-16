@@ -1,0 +1,29 @@
+﻿
+@model DAL.Entity.Paciente
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h4 class="modal-title">Detalhes do produto</h4>
+            </div>
+            <div class="modal-body">
+                <dl class="dl-horizontal">
+                    <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+                    <dd>@Html.DisplayFor(model => model.Nome)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Idade)</dt>
+                    <dd>@Html.DisplayFor(model => model.Idade)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Peso)</dt>
+                    <dd>@Html.DisplayFor(model => model.Peso)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Altura)</dt>
+                    <dd>@Html.DisplayFor(model => model.Altura)</dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

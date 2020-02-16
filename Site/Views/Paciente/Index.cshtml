@@ -1,0 +1,151 @@
+﻿@model IEnumerable<DAL.Entity.Paciente>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Cadastro de Pacientes";
+}
+
+
+<script href="~/js/site.min.js"></script>
+<script href="~/js/respond.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link type="text/javascript" href="~/css/site.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<link href="https://codeseven.github.io/toastr/build/toastr.min.css" rel="stylesheet" />
+@*<script type="text/javascript" src="~/js/jquery.validate-vsdoc.js"></script>*@
+<script type="text/javascript" src="~/js/modernizr-2.6.2.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+
+
+<script>
+    $(function () {
+        var displayMessage = function (message, msgType) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr[msgType](message);
+        };
+
+        if ($('#success').val()) {
+            displayMessage($('#success').val(), 'success');
+        }
+        if ($('#info').val()) {
+            displayMessage($('#info').val(), 'info');
+        }
+        if ($('#warning').val()) {
+            displayMessage($('#warning').val(), 'warning');
+        }
+        if ($('#error').val()) {
+            displayMessage($('#error').val(), 'error');
+        }
+    });
+
+</script>
+
+
+<p>
+    <button class="btn btn-success create">Novo Paciente <i class="glyphicon glyphicon-open"></i></button>
+</p>
+<table class="table table-hover table-striped">
+    <thead class="bg-info" style="color:white; font-weight: bold">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Idade)</th>
+            <th>@Html.DisplayNameFor(model => model.Peso)</th>
+            <th>@Html.DisplayNameFor(model => model.Altura)</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Idade)</td>
+                <td>@Html.DisplayFor(modelItem => item.Peso)</td>
+                <td>@Html.DisplayFor(modelItem => item.Altura)</td>
+                <td>
+                    <button class="btn btn-success details" data-id="@item.IdPaciente">Detalhes<i class="glyphicon glyphicon-file"></i></button>
+                    <button class="btn btn-primary edit" data-id="@item.IdPaciente">Editar<i class="glyphicon glyphicon-edit"></i></button>
+                    <button class="btn btn-danger delete" data-id="@item.IdPaciente">Deletar<i class="glyphicon glyphicon-trash"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="modal" class="modal fade" />
+
+<input type="hidden" id="success"
+       value="@TempData["success"]" />
+<input type="hidden" id="info"
+       value="@TempData["info"]" />
+<input type="hidden" id="warning"
+       value="@TempData["warning"]" />
+<input type="hidden" id="error"
+       value="@TempData["error"]" />
+
+
+@*<script href="~/lib/jquery/dist/jquery.js"></script>
+    <script href="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
+<script>
+    $(function () {
+        $(".details").click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("/Paciente/Details?id=" + id, function () {
+                $("#modal").modal();
+            })
+        });
+
+        $(".edit").click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("/Paciente/Edit?id=" + id, function () {
+                $("#modal").modal();
+            })
+        });
+
+        $(".delete").click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("/Paciente/Delete?id=" + id, function () {
+                $("#modal").modal();
+            })
+        });
+
+        $(".create").click(function () {
+            $("#modal").load("/Paciente/Create", function () {
+                $("#modal").modal();
+            })
+        });
+
+    })
+</script>
+
+
+
+
+

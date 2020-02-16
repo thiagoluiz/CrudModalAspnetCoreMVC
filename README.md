@@ -2,7 +2,7 @@
 Crud Modal em C# ASP.Net Core MVC#
 Exemplo de um Crud Modal utilizando ASP.NET Core MVC 
 
-Proposta
+## Proposta
 Criar um crud onde as views serão chamadas de forma modal, neste exemplo utilizei o banco Firebird.
 
 # [Views Modais](#)

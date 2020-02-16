@@ -1,8 +1,8 @@
-# Tabelas Dinâmicas com JQUERY#
-Exemplo de como criar um Table Html dinamicamente utilizando JQUERY
+Crud Modal em C# ASP.Net Core MVC#
+Exemplo de um Crud Modal utilizando ASP.NET Core MVC 
 
-## Proposta
-Criar uma matriz estilo excel e depois preencher algumas colunas dinamicamente
+Proposta
+Criar um crud onde as views serão chamadas de forma modal, neste exemplo utilizei o banco Firebird.
 
 # [Views Modais](#)
 
